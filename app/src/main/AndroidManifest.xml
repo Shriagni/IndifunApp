@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.deificindia.indifun1">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <application
+        android:name=".Utility.IndifunApplication"
+        android:allowBackup="false"
+        android:icon="@drawable/appicon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+
+        <activity android:name=".ui.imagepicker.ImagePickerActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.Test1Activity"/>
+        <activity android:name=".Activity.UserDetailsActivityActivity" />
+        <activity android:name=".Fragment.user_detail_Activity" />
+        <activity android:name=".Activity.FullSizeImageActivity" />
+        <activity android:name=".Activity.ActivityUserLevel" />
+        <activity android:name=".Activity.CountryWiseUser" />
+        <activity android:name=".Activity.MessagesActivity" />
+        <activity android:name=".Activity.FFFGActivity" />
+
+        <service
+            android:name=".services.IndifunService"
+            android:enabled="true"
+            android:exported="true" /> <!-- android:hardwareAccelerated="false" -->
+        <activity android:name=".Activity.ChatActivity" />
+        <activity android:name=".Activity.MomentNotification" />
+        <activity android:name=".Activity.CoinRecordActivity" />
+        <activity android:name=".Activity.ProfileGallery" />
+        <activity android:name=".Activity.AristocarticityCenter" />
+        <activity android:name=".Activity.InterstList" />
+        <activity android:name=".Activity.LanguageList" />
+        <activity android:name=".Activity.EditProfileActivity" />
+        <activity android:name=".Activity.StickerActivity" />
+        <activity android:name=".Activity.GeneralActivity" />
+        <activity android:name=".Activity.SearchUserActivity" />
+        <activity android:name=".Activity.DiscoverGroups" />
+        <activity android:name=".Activity.RechargeCoins" />
+        <activity android:name=".Activity.WebViewActivity" />
+        <activity android:name=".Activity.AccountActivity" />
+        <activity android:name=".Utility.ImagePickerActivity" />
+        <activity android:name=".Activity.OnlineCustomerService" />
+        <activity android:name=".Activity.UploadImageActivity" />
+        <activity android:name=".Activity.StreamActivity" />
+        <activity android:name=".Activity.SettingActivity" />
+        <activity android:name=".Activity.BroadcastsWatchActivity" />
+        <activity android:name=".Activity.MedalsActivity" />
+        <activity android:name=".Activity.IncomeActivity" />
+        <activity android:name=".Activity.LeaderBoardActivity" />
+        <activity android:name=".Activity.FirstLoginActivity" />
+        <activity android:name=".Activity.ProfileActivity" />
+        <activity android:name=".Activity.SingupActivity" />
+        <activity android:name=".Activity.HomeActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".Activity.OtpActivity" />
+        <activity android:name=".Activity.LoginActivity" />
+        <activity
+            android:name=".Activity.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".agorlive.ui.live.MultiHostLiveActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".agorlive.ui.live.SingleHostLiveActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".agorlive.ui.live.HostPKLiveActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/PkTheme"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".agorlive.ui.live.LivePrepareActivity"
+            android:keepScreenOn="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
+        <activity
+            android:name=".agorlive.ui.live.VirtualImageSelectActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".agorlive.ui.live.VirtualHostLiveActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait" /> <!-- cache directory file provider paths -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service
+            android:name=".fcm.MyFirebaseMessagingService"
+            android:exported="false"
+            android:permission="TODO">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

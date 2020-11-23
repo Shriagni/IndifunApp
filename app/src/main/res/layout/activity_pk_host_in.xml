@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/live_room_pk_room_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash">
+
+    <FrameLayout
+        android:id="@+id/live_pk_video_normal_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:id="@+id/pk_host_in_top_participant_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/activity_vertical_margin_8dp">
+        <com.deificindia.indifun1.agorlive.ui.components.LiveHostNameLayout
+            android:id="@+id/pk_host_in_name_pad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+        <com.deificindia.indifun1.agorlive.ui.components.LiveRoomUserLayout
+            android:id="@+id/pk_host_in_participant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/itemLayouts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin_8dp"
+        android:layout_below="@id/pk_host_in_top_participant_layout"/>
+
+    <com.deificindia.indifun1.agorlive.ui.components.PkLayout
+        android:id="@+id/pk_host_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemLayouts"
+        android:layout_marginTop="@dimen/activity_vertical_margin_8dp"
+        android:visibility="gone"/>
+
+    <com.deificindia.indifun1.agorlive.ui.components.bottomLayout.LiveBottomButtonLayout
+        android:id="@+id/pk_host_in_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/live_bottom_layout_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"/>
+
+    <com.deificindia.indifun1.agorlive.ui.components.LiveRoomMessageList
+        android:id="@+id/message_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pk_host_layout"
+        android:layout_above="@id/pk_host_in_bottom_layout"
+        android:layout_marginBottom="@dimen/activity_vertical_margin_8dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin_4dp"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/start_pk_button"
+        android:layout_width="@dimen/live_pk_start_button_size"
+        android:layout_height="@dimen/live_pk_start_button_size"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/pk_host_in_bottom_layout"
+        android:src="@drawable/start_pk_button"
+        android:scaleType="fitXY"/>
+
+    <com.deificindia.indifun1.agorlive.ui.components.LiveMessageEditLayout
+        android:id="@+id/message_edit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/live_message_edit_height"
+        android:paddingTop="@dimen/live_message_text_margin"
+        android:paddingBottom="@dimen/live_message_text_margin"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"/>
+
+    <com.deificindia.indifun1.agorlive.ui.components.RtcStatsView
+        android:id="@+id/host_pk_rtc_stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pk_host_layout"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:background="@drawable/color_round_rect_gray_light"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/layout_room_enter_animation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/pk_host_layout" />
+
+    <LinearLayout
+        android:id="@+id/layout_gift_animation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/itemLayouts" />
+
+    <LinearLayout
+        android:id="@+id/layout_heart_animation_area"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom|center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/liveStreaming_fullscreenGift"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:scaleType="centerCrop" />
+
+
+</RelativeLayout>

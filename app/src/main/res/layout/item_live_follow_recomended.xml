@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="@dimen/_2sdp"
+    app:cardCornerRadius="@dimen/_5sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/follow_icon"
+            android:layout_width="90dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@null"
+            android:src="@drawable/avatar"
+            android:layout_marginBottom="5dp" />
+
+        <TextView
+            android:id="@+id/follow_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Name"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_id"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Follow"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/cisrcular_button_shape" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

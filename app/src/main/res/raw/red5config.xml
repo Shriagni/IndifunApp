@@ -1,0 +1,36 @@
+<Config>
+    <Properties>
+        <bitrate>750</bitrate>
+        <host>hitasoft.co.in</host>
+        <server_port>5080</server_port>
+        <license_key>5DZE-KBYB-CDSD-RS6U</license_key>
+        <publish_buffer_time>0.5</publish_buffer_time>
+        <subscribe_buffer_time>0.5</subscribe_buffer_time>
+        <port>8554</port>
+        <context>live</context>
+        <camera_width>640</camera_width>
+        <camera_height>360</camera_height>
+        <debug_view>false</debug_view>
+        <audio_on>true</audio_on>
+        <video_on>true</video_on>
+        <sample_rate>44100</sample_rate>
+        <fps>15</fps>
+    </Properties>
+
+    <Tests>
+        <Test title="Publish">
+            <description>Simple publish</description>
+            <Properties></Properties>
+            <name>Publish</name>
+            <class>PublishStream</class>
+        </Test>
+
+        <Test title="Subscribe">
+            <description>Simple Subscribe</description>
+            <Properties></Properties>
+            <name>Subscribe</name>
+            <class>SubscribeStream</class>
+        </Test>
+    </Tests>
+
+</Config>

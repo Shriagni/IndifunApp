@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activity.MessagesActivity">
+
+  <LinearLayout
+      android:id="@+id/linearLayout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentTop="true"
+      android:gravity="center_horizontal"
+      android:orientation="vertical"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent">>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-7dp"
+        android:background="#00ECECEC"
+        android:gravity="top|center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <ImageView
+          android:id="@+id/NotiBack"
+          android:layout_width="47dp"
+          android:layout_height="36dp"
+          android:layout_gravity="center_vertical"
+          android:layout_marginTop="6dp"
+          android:layout_marginRight="@dimen/_20sdp"
+          android:clickable="true"
+          android:padding="@dimen/_5sdp"
+          app:srcCompat="@drawable/arrow_back"
+          app:tint="@color/black" />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:layout_marginLeft="-25dp"
+          android:layout_marginTop="10dp"
+          android:layout_weight="1"
+          android:fontFamily="@font/opensans_semibold"
+          android:gravity="center_vertical"
+          android:text="Moment notification"
+          android:textAlignment="viewStart"
+          android:textColor="@color/black"
+          android:textSize="18sp"
+          android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight=".5"
+          android:gravity="right">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/NotiTab"
+            style="@style/tabLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            app:tabGravity="start"
+            app:tabIndicatorColor="@color/colorPrimaryDark"
+            app:tabIndicatorHeight="5dip"
+            app:tabMaxWidth="0dp"
+            app:tabMode="auto"
+            app:tabSelectedTextColor="@color/colorPrimaryDark"
+            app:tabTextAppearance="@style/tabLayoutStyle"
+            app:tabTextColor="@color/black" />
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/NotiViewpage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_5dp" />
+
+  </LinearLayout>
+
+</RelativeLayout>

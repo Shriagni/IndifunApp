@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5sp"
+    android:elevation="50dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/recomimage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:padding="@dimen/_5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5dp"
+            android:text="@string/text"
+            android:textColor="#0B0A0A"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/llend"
+            app:layout_constraintStart_toEndOf="@+id/recomimage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/tagsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/recomimage"
+            app:layout_constraintTop_toBottomOf="@+id/username"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal">
+
+            <com.deificindia.indifun1.ui.TagView
+                android:id="@+id/gendertag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_2dp" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tvWhatsup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="whatsup"
+            android:padding="@dimen/_5dp"
+            android:maxLines="1"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/tagsLayout"
+            app:layout_constraintStart_toEndOf="@+id/recomimage"/>
+
+        <LinearLayout
+            android:id="@+id/llend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:contentDescription="@null"
+                android:paddingStart="0dp"
+                android:paddingEnd="7dp"
+                app:srcCompat="@drawable/ic_like" />
+<!--
+
+            <ImageView
+                android:id="@+id/imag7"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:contentDescription="@null"
+                android:paddingStart="0dp"
+                android:paddingEnd="7dp"
+                app:srcCompat="@drawable/ic_heart" />
+-->
+
+
+             <TextView
+                 android:id="@+id/textView77"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:paddingEnd="10dp"
+                 android:text="Hi"
+                 android:textAlignment="textEnd"
+                 android:textSize="18sp"
+                 android:textStyle="bold|italic" />
+        </LinearLayout>
+
+        <com.deificindia.indifun1.ui.imagelistview.ImageListView
+            android:id="@+id/imgMomentImages"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/tvWhatsup"
+            app:layout_constraintStart_toEndOf="@+id/recomimage"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <RelativeLayout
+            android:id="@+id/liveLayout"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_60dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/tvWhatsup"
+            app:layout_constraintStart_toEndOf="@+id/recomimage"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgLive"
+                android:layout_width="@dimen/_50dp"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.cardview.widget.CardView>

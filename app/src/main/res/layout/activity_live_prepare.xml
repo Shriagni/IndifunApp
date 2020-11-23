@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/local_preview_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:id="@+id/prepare_top_btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:paddingStart="@dimen/live_prepare_content_padding"
+        android:paddingEnd="@dimen/live_prepare_content_padding">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/live_prepare_close"
+            android:layout_width="@dimen/button_height"
+            android:layout_height="@dimen/button_height"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/live_prepare_switch_camera"
+            android:layout_width="@dimen/button_height"
+            android:layout_height="@dimen/button_height"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/prepare_name_edit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_below="@id/prepare_top_btn_layout"
+        android:layout_marginStart="@dimen/live_prepare_content_padding"
+        android:layout_marginEnd="@dimen/live_prepare_content_padding">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/room_name_edit_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/prepare_padding"
+            android:layout_centerVertical="true"
+            android:text="@string/live_prepare_hint"
+            android:textSize="@dimen/_20sp"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/room_name_edit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_toEndOf="@id/room_name_edit_hint"
+            android:paddingStart="@dimen/prepare_padding"
+            android:paddingEnd="@dimen/prepare_padding"
+            android:textAlignment="gravity"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/_20sp"
+            android:hint="@string/enter_a_title"
+            android:background="@null"
+            android:inputType="text"
+            android:lines="1"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/live_prepare_bottom_button_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginBottom="24dp"
+        android:paddingStart="@dimen/live_prepare_content_padding"
+        android:paddingEnd="@dimen/live_prepare_content_padding"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/live_prepare_beauty_btn"
+            android:layout_width="@dimen/bottom_btn_size"
+            android:layout_height="@dimen/bottom_btn_size"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/prepare_beauty_button"
+            android:scaleType="fitXY"
+            android:background="@drawable/round_dark_gray_bg"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/live_prepare_go_live_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_height"
+            android:layout_toEndOf="@id/live_prepare_beauty_btn"
+            android:paddingStart="@dimen/start_broadcast_btn_padding"
+            android:paddingEnd="@dimen/start_broadcast_btn_padding"
+            android:layout_marginStart="@dimen/bottom_btn_padding"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:text="@string/go_live_text"
+            android:textSize="@dimen/text_size_normal"
+            android:textColor="@color/live_action_button_text_color"
+            android:background="@drawable/live_action_button_bg"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/live_prepare_setting_btn"
+            android:layout_width="@dimen/bottom_btn_size"
+            android:layout_height="@dimen/bottom_btn_size"
+            android:layout_toEndOf="@id/live_prepare_go_live_btn"
+            android:layout_marginStart="@dimen/bottom_btn_padding"
+            android:layout_centerVertical="true"
+            android:src="@drawable/setting_button"
+            android:scaleType="fitXY"
+            android:background="@drawable/round_dark_gray_bg"/>
+    </RelativeLayout>
+
+   <!-- <RelativeLayout
+        android:id="@+id/live_type_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent"
+        android:layout_marginBottom="24dp">
+
+        <com.deificindia.indifun.ui.ImageArea
+            android:id="@+id/img_video_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:ia_src="@drawable/camera_automation_active"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:ia_title="Video Mode" />
+
+        <com.deificindia.indifun.ui.ImageArea
+            android:id="@+id/img_pk_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:ia_src="@drawable/camera_automation_inactive"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:ia_title="PK mode"
+            android:layout_toEndOf="@+id/img_video_mode"/>
+
+    </RelativeLayout>
+-->
+
+</RelativeLayout>
+

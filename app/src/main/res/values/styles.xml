@@ -1,0 +1,295 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/window_primary_dark_color</item>
+        <item name="colorPrimaryDark">@color/window_primary_dark_color</item>
+        <item name="colorAccent">@color/window_primary_dark_color</item>
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+
+    <style name="PkTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/window_primary_dark_color</item>
+        <item name="colorPrimaryDark">@color/window_primary_dark_color</item>
+        <item name="colorAccent">@color/window_primary_dark_color</item>
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+
+    <style name="TextLabel" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColorHint">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+    </style>
+
+
+
+    <style name="tabLayoutStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/_14sp</item>
+    </style>
+
+    <style name="error_appearance">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="buttonStyle">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@drawable/login_gradiant_button</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+
+    <style name="nav_title_text">
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="room_tab_title_text">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+    <style name="room_list_tab_item">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/room_tab_height</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="live_message_user_text_style">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="live_room_dialog" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:backgroundDimAmount">0</item>
+    </style>
+
+    <style name="seat_item_dialog" parent="live_room_dialog">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="gift_anim_window">
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="live_room_dialog_center_in_window" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:windowBackground">@color/gray_alpha2</item>
+    </style>
+
+    <style name="beauty_action_sheet_button">
+        <item name="android:layout_width">@dimen/live_room_action_sheet_button_width</item>
+        <item name="android:layout_height">@dimen/live_room_action_sheet_button_height</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/action_sheet_button_bg</item>
+    </style>
+
+    <style name="action_sheet_seek_bar">
+        <item name="android:minHeight">@dimen/live_room_action_sheet_seek_bar_height</item>
+        <item name="android:maxHeight">@dimen/live_room_action_sheet_seek_bar_height</item>
+        <item name="android:progressDrawable">@drawable/setting_progress</item>
+        <item name="android:thumb">@drawable/seekbar_thumb</item>
+    </style>
+
+    <style name="action_sheet_beauty_seek_bar" parent="action_sheet_seek_bar">
+        <item name="android:max">10</item>
+    </style>
+
+    <style name="voice_action_sheet_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">
+            @dimen/live_room_action_sheet_voice_button_text_padding_vertical
+        </item>
+        <item name="android:paddingBottom">
+            @dimen/live_room_action_sheet_voice_button_text_padding_vertical
+        </item>
+        <item name="android:paddingStart">
+            @dimen/live_room_action_sheet_voice_button_text_padding_horizontal
+        </item>
+        <item name="android:paddingEnd">
+            @dimen/live_room_action_sheet_voice_button_text_padding_horizontal
+        </item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/action_sheet_button_bg</item>
+    </style>
+
+    <style name="host_in_seat_dialog_item_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/live_host_in_seat_item_height</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="host_in_seat_dialog_item_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/live_host_in_seat_item_dialog_stroke_width</item>
+        <item name="android:layout_marginStart">@dimen/live_host_in_seat_item_padding</item>
+        <item name="android:layout_marginEnd">@dimen/live_host_in_seat_item_padding</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <!--edit @spario-->
+    <style name="SpotsDialogDefault" parent="android:Theme.DeviceDefault.Light.Dialog">
+        <!-- <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogTitleText">Loading…</item>-->
+        <item name="DialogSpotCount">5</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="DialogSlideAnim" parent="@android:style/Theme.Dialog">
+        <!--<item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>-->
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="DialogBottomAnimation">
+        <item name="android:windowEnterAnimation">@anim/from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/to_bottom</item>
+    </style>
+
+    <style name="DialogTopRightCornerAnimation">
+        <item name="android:windowEnterAnimation">@anim/from_top_right_corner</item>
+        <item name="android:windowExitAnimation">@anim/to_top_right_corner</item>
+    </style>
+
+
+    <style name="FullScreenDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+
+    <style name="DialogTheme">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#A3A3A3</item>
+        <item name="android:layout_marginTop">17dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:layout_marginBottom">17dp</item>
+        <item name="android:layout_marginStart">20dp</item>
+    </style>
+
+    <style name="divider2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#A3A3A3</item>
+        <item name="android:layout_marginTop">17dp</item>
+        <item name="android:layout_marginBottom">17dp</item>
+    </style>
+
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="MyAppTheme.TextInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">#50FFFFFF</item>
+        <item name="tabIndicatorHeight">0dp</item>
+        <item name="tabMaxWidth">0dp</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabMode">auto</item>
+        <item name="tabSelectedTextColor">@color/golden_yellow</item>
+        <item name="tabTextAppearance">@color/golden_yellow</item>
+        <item name="tabTextColor">#505050</item>
+        <item name="android:background">@drawable/tab_background</item>
+    </style>
+
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="product_detail_window">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <!---->
+    </style>
+
+    <!--
+
+    -->
+    <style name="CustomText" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black_87</item>
+    </style>
+
+    <style name="CustomText_Display" parent="@style/CustomText">
+        <item name="android:textSize">34sp</item>
+        <item name="android:textColor">@color/black_54</item>
+    </style>
+
+    <style name="CustomText_Headline" parent="@style/CustomText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/black_87</item>
+    </style>
+
+
+    <style name="CustomText_Title" parent="@style/CustomText">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black_87</item>
+    </style>
+
+    <style name="CustomText_Subhead" parent="@style/CustomText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black_87</item>
+    </style>
+
+    <style name="CustomText_Body" parent="@style/CustomText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black_87</item>
+    </style>
+
+    <style name="CustomText_Caption" parent="@style/CustomText">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black_54</item>
+    </style>
+
+
+
+</resources>

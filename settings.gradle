@@ -1,0 +1,3 @@
+include ':app', ':faceunity'
+rootProject.name = "indifun"
+include ':framework'

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_scalable_gray_bg">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgAvtar"
+        android:layout_width="@dimen/_25dp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/img_user_default"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:text="usernam"
+        android:maxLines="1"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:maxWidth="100dp"
+        android:ellipsize="end"
+        android:textColor="@color/white"
+        android:layout_toEndOf="@+id/imgAvtar"
+        android:layout_toStartOf="@+id/adduser"
+        />
+
+    <ImageView
+        android:id="@+id/adduser"
+        android:layout_width="@dimen/_20dp"
+        android:layout_height="@dimen/_20dp"
+        android:src="@drawable/add"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        />
+
+
+</RelativeLayout>

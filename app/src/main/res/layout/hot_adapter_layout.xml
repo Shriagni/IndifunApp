@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:elevation="@dimen/_5dp"
+    app:cardCornerRadius="@dimen/_2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="245dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/hotimage"
+            android:layout_width="match_parent"
+            android:layout_height="219dp"
+            android:scaleType="fitXY"
+            android:layout_gravity="bottom|center"
+            tools:srcCompat="@drawable/profile_image_6" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center|center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/hotusername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="TextView"
+                android:padding="@dimen/_5dp"
+                android:textColor="@color/blue_dialog"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_weight="0"
+                app:srcCompat="@android:mipmap/sym_def_app_icon" />
+
+            <TextView
+                android:id="@+id/hotfriends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MMM"
+                android:textSize="14sp"
+                android:padding="@dimen/_5dp"
+                android:ems="3"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

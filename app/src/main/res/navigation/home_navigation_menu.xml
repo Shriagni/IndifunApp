@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation_menu"
+    app:startDestination="@id/liveFragment">
+
+    <fragment
+        android:id="@+id/liveFragment"
+        android:name="com.deificindia.indifun1.Fragment.LiveFragment"
+        android:label="fragment_live"
+        tools:layout="@layout/fragment_live" >
+        <action
+            android:id="@+id/action_liveFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="com.deificindia.indifun1.Fragment.ExploreFragment"
+        android:label="explore_fragment"
+        tools:layout="@layout/explore_fragment" >
+    </fragment>
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.deificindia.indifun1.Fragment.PostFragment"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" >
+        <action
+            android:id="@+id/action_postFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.deificindia.indifun1.Fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>

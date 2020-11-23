@@ -1,0 +1,144 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.deificindia.indifun1"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    dataBinding {
+        enabled true
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+}
+
+dependencies {
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+
+    def agora_rtc_version = "3.0.1.1"
+    def agora_rtm_version = "1.2.2"
+    def glide_version = "4.11.0"
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:support-v4:*'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+
+    implementation platform('com.google.firebase:firebase-bom:26.0.0')
+    implementation 'com.google.firebase:firebase-firestore:22.0.0'
+    implementation 'com.google.firebase:firebase-auth:20.0.0'
+    implementation 'com.google.firebase:firebase-analytics:18.0.0'
+    implementation 'com.google.firebase:firebase-crashlytics:17.2.2'
+    implementation 'com.google.firebase:firebase-messaging:21.0.0'
+    testImplementation 'junit:junit:4.13'
+    implementation('io.socket:socket.io-client:1.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.airbnb.android:lottie:3.4.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //retrofit
+    // retrofit, gson
+    implementation "com.squareup.retrofit2:retrofit:2.7.2" //261
+    implementation "com.squareup.retrofit2:converter-gson:2.7.2"
+    implementation 'com.squareup.retrofit2:converter-scalars:2.6.1'
+    implementation "com.squareup.okhttp3:okhttp:4.8.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.8.0"
+    implementation 'com.squareup.okio:okio:2.7.0' //222
+
+    implementation 'android.arch.lifecycle:viewmodel:1.1.1'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    annotationProcessor 'android.arch.lifecycle:compiler:1.1.1'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation "com.google.android.material:material:1.3.0-alpha03"
+
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation "com.karumi:dexter:6.2.1"
+    implementation 'com.github.yalantis:ucrop:2.2.2'
+    implementation 'com.google.android.gms:play-services-location:17.1.0'
+
+    implementation "io.agora.rtc:full-sdk:3.1.3"
+    //implementation "io.agora.rtc:full-sdk:$agora_rtc_version"
+    implementation "io.agora.rtm:rtm-sdk:1.4.1"
+    //implementation "io.agora.rtm:rtm-sdk:$agora_rtm_version"
+    //implementation files('libs/agora-rtm-sdk1.jar')
+
+    implementation 'com.elvishew:xlog:1.6.1'
+    implementation ("com.github.bumptech.glide:glide:$glide_version") {
+        exclude group: "com.android.support"
+    }
+    implementation project(path: ':faceunity')
+    implementation project(path: ':framework')
+    implementation 'androidx.navigation:navigation-fragment:2.3.0'
+    implementation 'androidx.navigation:navigation-ui:2.3.0'
+
+
+    implementation 'com.github.hani-momanii:SuperNova-Emoji:1.1'
+    implementation 'tk.jamunx.ui:gallery:0.0.8'
+    implementation 'com.pixplicity.sharp:library:1.1.0'
+    //implementation 'com.fxn769:pix:1.5.4'
+    implementation "com.github.skydoves:androidribbon:1.0.3"
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+   // Country Code Picker Library
+    implementation 'com.hbb20:ccp:2.4.0'
+
+    implementation 'br.com.simplepass:loading-button-android:2.2.0'
+
+    //image library by FB -- streaming of progressive JPEGs
+    //display of animated GIFs and WebPs
+    implementation 'com.facebook.fresco:fresco:2.3.0'
+
+    ///RxJava 3
+    //implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    //implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
+    //implementation "com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0"
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.16'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+
+    implementation 'com.tomergoldst.android:tooltips:1.0.10'
+
+    implementation 'co.lujun:androidtagview:1.1.7'
+
+
+
+}

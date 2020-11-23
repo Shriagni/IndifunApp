@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.CountryFragment">
+
+
+    <RelativeLayout
+        android:id="@+id/countrycontainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/countryRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/leftArrow"
+            android:layout_width="@dimen/_60dp"
+            android:layout_height="@dimen/_60dp"
+            android:layout_alignParentEnd="true"
+            app:tint="@color/black"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="18dp"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"/>
+
+        <ImageView
+            android:id="@+id/rightArrow"
+            android:layout_width="@dimen/_60dp"
+            android:layout_height="@dimen/_60dp"
+            app:tint="@color/black"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="18dp"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"/>
+
+    </RelativeLayout>
+
+
+    <View style="@style/divider2"
+        android:id="@+id/v1"
+        android:layout_below="@+id/countrycontainer"/>
+
+    <TextView
+        android:id="@+id/txtCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/v1"
+        android:visibility="gone"
+        android:text="Country"
+        android:textStyle="bold"
+        android:textSize="@dimen/_18sdp"
+        android:padding="@dimen/_10dp" />
+
+    <com.deificindia.indifun1.ui.swipe.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtCountry">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/countryUserRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.deificindia.indifun1.ui.swipe.SwipeRefreshLayout>
+
+    <com.deificindia.indifun1.ui.LoadingAnimView
+        android:id="@+id/loadinganim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/txtCountry"/>
+
+
+
+</RelativeLayout>

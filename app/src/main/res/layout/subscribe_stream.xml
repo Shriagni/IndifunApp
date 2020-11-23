@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:animateLayoutChanges="true"
+    android:keepScreenOn="true"
+    tools:context=".Streamdata.SubscribeStream">
+
+<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        <VideoView-->
+<!--            android:id="@+id/videoview"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent" />-->
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/loadingimage"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:visibility="visible">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/image"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@color/black"-->
+<!--                android:scaleType="centerCrop" />-->
+
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_marginBottom="20dp">-->
+
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/livestatus"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="25dp"-->
+<!--                    android:background="@drawable/livestatus_bg"-->
+<!--                    android:padding="3dp"-->
+<!--                    android:layout_marginLeft="25dp">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:layout_marginEnd="15dp"-->
+<!--                        android:layout_marginStart="7dp"-->
+<!--                        android:maxLines="1"-->
+<!--                        android:text="Live"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="13dp"-->
+<!--                        android:layout_marginLeft="7dp"-->
+<!--                        android:layout_marginRight="15dp" />-->
+
+<!--                </RelativeLayout>-->
+
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="65dp"-->
+<!--                    android:background="@drawable/primary_curved"-->
+<!--                    android:padding="3dp"-->
+<!--                    android:layout_marginLeft="65dp">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/viewimage"-->
+<!--                        android:layout_width="15dp"-->
+<!--                        android:layout_height="15dp"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:layout_marginStart="4dp"-->
+<!--                        android:src="@drawable/views"-->
+<!--                        android:layout_marginLeft="4dp" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/viewcount"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:layout_marginEnd="4dp"-->
+<!--                        android:layout_marginStart="4dp"-->
+<!--                        android:layout_toEndOf="@+id/viewimage"-->
+<!--                        android:maxLines="1"-->
+<!--                        android:text="count"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="13dp"-->
+<!--                        android:layout_toRightOf="@+id/viewimage" />-->
+
+<!--                </RelativeLayout>-->
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/title"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/livestatus"-->
+<!--                    android:layout_margin="15dp"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:paddingStart="10dp"-->
+<!--                    android:text="tile"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="18dp"-->
+<!--                    android:paddingLeft="10dp" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/userimage"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_below="@+id/title"-->
+<!--                    android:layout_marginStart="25dp"-->
+<!--                    android:layout_marginLeft="25dp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/username"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@id/title"-->
+<!--                    android:layout_margin="15dp"-->
+<!--                    android:layout_toEndOf="@+id/userimage"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:text="tile"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="18dp"-->
+<!--                    android:layout_toRightOf="@+id/userimage" />-->
+
+<!--            </RelativeLayout>-->
+<!--        </RelativeLayout>-->
+
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/afterlive"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:behavior_hideable="true"-->
+<!--            android:behavior_peekHeight="00dp"-->
+<!--            android:behavior_skipCollapsed="true"-->
+<!--            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">-->
+
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/recyclerView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="400dp"-->
+<!--                android:layout_above="@+id/userlist"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:scrollbars="none" />-->
+
+<!--            <View-->
+<!--                android:id="@+id/likeclickview"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent" />-->
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/livecount"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_above="@+id/commentlay"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_marginBottom="14dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:background="@color/transparent"-->
+<!--                android:padding="3dp"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:layout_alignParentLeft="true">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/viewimage1"-->
+<!--                    android:layout_width="15dp"-->
+<!--                    android:layout_height="15dp"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_marginLeft="8dp"-->
+<!--                    android:src="@drawable/views" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/liveviewcount"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_marginEnd="8dp"-->
+<!--                    android:layout_marginStart="6dp"-->
+<!--                    android:layout_toEndOf="@+id/viewimage1"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:paddingTop="1dp"-->
+<!--                    android:text="0"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    tools:ignore="MissingClass"-->
+<!--                    android:layout_marginRight="8dp"-->
+<!--                    android:layout_marginLeft="6dp"-->
+<!--                    android:layout_toRightOf="@+id/viewimage1" />-->
+<!--            </RelativeLayout>-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/userlist"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_above="@+id/commentlay"-->
+<!--                android:layout_marginBottom="4dp"-->
+<!--                android:layout_toEndOf="@+id/livecount"-->
+<!--                android:layout_toRightOf="@+id/livecount" />-->
+
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_below="@+id/userlist"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                 />-->
+
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/commentlay"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_marginBottom="15dp"-->
+<!--                android:layout_marginEnd="15dp"-->
+<!--                android:layout_marginStart="15dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:orientation="horizontal">-->
+
+<!--&lt;!&ndash;                <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/comment"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginEnd="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_weight="7"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:background="@drawable/rounded_edittext"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:hint="@string/comment"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:imeOptions="actionNext"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:maxLength="80"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:padding="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:singleLine="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:textColor="@color/textPrimary"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:textSize="@dimen/text_size_medium"&ndash;&gt;-->
+<!--&lt;!&ndash;                    app:typeface="font_regular.otf"&ndash;&gt;-->
+<!--&lt;!&ndash;                    tools:ignore="MissingClass" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <com.makeramen.roundedimageview.RoundedImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/sendbutton"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_margin="2dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:background="@color/colorAccent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:padding="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:scaleType="centerCrop"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:src="@drawable/sent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:visibility="gone"&ndash;&gt;-->
+<!--&lt;!&ndash;                    app:riv_corner_radius="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    app:riv_mutate_background="true" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <de.hdodenhof.circleimageview.CircleImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/detail"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_margin="2dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:background="@color/transparentgrey"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:padding="8dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:scaleType="centerCrop"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:src="@drawable/menu"&ndash;&gt;-->
+<!--&lt;!&ndash;                    app:riv_corner_radius="30dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    app:riv_mutate_background="true" />&ndash;&gt;-->
+<!--&lt;!&ndash;            </LinearLayout>&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <tyrantgit.widget.HeartLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/heart_layout"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="100dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_above="@+id/commentlay"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_alignParentRight="true" />&ndash;&gt;-->
+<!--&lt;!&ndash;        </RelativeLayout>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <RelativeLayout&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/beforeLive"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="match_parent">&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/cancel"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_alignParentEnd="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_gravity="center_vertical"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_margin="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:background="?attr/selectableItemBackgroundBorderless"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:clickable="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:padding="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:src="@drawable/cancel"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:tint="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:visibility="visible" />&ndash;&gt;-->
+<!--&lt;!&ndash;        </RelativeLayout>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <RelativeLayout&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/detailslay"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:background="@color/transparentblack"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:clickable="true"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:focusable="true"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:behavior_hideable="true"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:behavior_peekHeight="00dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:behavior_skipCollapsed="true"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:layout_behavior="android.support.design.widget.BottomSheetBehavior">&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <RelativeLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/firstdetail"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="320dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_alignParentBottom="true">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <RelativeLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/livestatusdetail"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginStart="25dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:background="@drawable/livestatus_bg"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:padding="3dp">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <com.hitasoft.app.external.CustomTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_centerVertical="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginEnd="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginStart="7dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:maxLines="1"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:text="Live"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textColor="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textSize="@dimen/text_size_small"&ndash;&gt;-->
+<!--&lt;!&ndash;                        app:typeface="font_regular.otf" />&ndash;&gt;-->
+<!--&lt;!&ndash;                </RelativeLayout>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <RelativeLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginStart="65dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:background="@drawable/primary_curved"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:padding="3dp">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/viewimagedetail"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_centerVertical="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginStart="4dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:src="@drawable/views" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <com.hitasoft.app.external.CustomTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/viewcountdetail"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_centerVertical="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginEnd="4dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginStart="4dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_toEndOf="@+id/viewimagedetail"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:maxLines="1"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:paddingEnd="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:text="0"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textColor="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textSize="@dimen/text_size_small"&ndash;&gt;-->
+<!--&lt;!&ndash;                        app:typeface="font_regular.otf" />&ndash;&gt;-->
+<!--&lt;!&ndash;                </RelativeLayout>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <com.hitasoft.app.external.CustomTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/streamname"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_below="@id/livestatusdetail"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginBottom="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginStart="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:padding="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:text="title"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:textColor="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:textSize="@dimen/text_size_large"&ndash;&gt;-->
+<!--&lt;!&ndash;                    app:typeface="font_regular.otf" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <RelativeLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/userdata"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_below="@+id/streamname"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginBottom="5dp">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/userimage2"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginBottom="8dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginStart="15dp" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <com.hitasoft.app.external.CustomTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/fullname"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="200dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginStart="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_toEndOf="@+id/userimage2"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:ellipsize="end"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:text="name"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textColor="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textSize="@dimen/text_size_medium"&ndash;&gt;-->
+<!--&lt;!&ndash;                        app:typeface="font_regular.otf" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <com.hitasoft.app.external.CustomTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/username2"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="200dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_below="@+id/fullname"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginStart="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_toEndOf="@+id/userimage2"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:ellipsize="end"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:text="username"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textColor="@color/textsecondary"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textSize="@dimen/text_size_small"&ndash;&gt;-->
+<!--&lt;!&ndash;                        app:typeface="font_regular.otf" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <LinearLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/followbutton"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_alignParentEnd="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginEnd="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:background="@drawable/outline_bg"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:gravity="center_vertical"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:paddingBottom="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:paddingEnd="8dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:paddingStart="8dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:paddingTop="5dp">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:id="@+id/followimage"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_width="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_height="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_marginEnd="4dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:src="@drawable/follow" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        <com.hitasoft.app.external.CustomTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:id="@+id/follow"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:ellipsize="end"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:text="@string/follow"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:textColor="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:textSize="@dimen/text_size_medium"&ndash;&gt;-->
+<!--&lt;!&ndash;                            app:typeface="font_regular.otf" />&ndash;&gt;-->
+<!--&lt;!&ndash;                    </LinearLayout>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <de.hdodenhof.circleimageview.CircleImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/unfollow"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="30dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="30dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_alignParentEnd="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginEnd="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:background="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:padding="8dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:src="@drawable/tick_gray"&ndash;&gt;-->
+<!--&lt;!&ndash;                        app:riv_corner_radius="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        app:riv_mutate_background="true" />&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;                </RelativeLayout>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <View&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="1dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_below="@+id/userdata"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:background="@color/viewcolor" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/broadcastdetail"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_below="@+id/userdata"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:orientation="horizontal"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:padding="10dp">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="30dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="30dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_gravity="center_vertical"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginStart="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:padding="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:src="@drawable/information" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <com.hitasoft.app.external.CustomTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_gravity="center_vertical"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginStart="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:text="@string/broadcastdetail"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textColor="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textSize="@dimen/text_size_large"&ndash;&gt;-->
+<!--&lt;!&ndash;                        app:typeface="font_regular.otf" />&ndash;&gt;-->
+<!--&lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <View&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="1dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_below="@+id/broadcastdetail"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:background="@color/viewcolor" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/hidechat"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_below="@+id/broadcastdetail"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:orientation="horizontal"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:padding="10dp">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="30dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="30dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_gravity="center_vertical"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginStart="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:padding="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:src="@drawable/hidechat" />&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;                    <com.hitasoft.app.external.CustomTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_gravity="center_vertical"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginStart="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:text="@string/hidechat"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textColor="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textSize="@dimen/text_size_large"&ndash;&gt;-->
+<!--&lt;!&ndash;                        app:typeface="font_regular.otf" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <View&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="1dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_below="@+id/hidechat"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:background="@color/viewcolor" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/reportbroadcast"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_below="@+id/hidechat"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:orientation="horizontal"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:padding="10dp">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="30dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="30dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_gravity="center_vertical"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginStart="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:padding="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:src="@drawable/report" />&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;                    <com.hitasoft.app.external.CustomTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/reporttext"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_gravity="center_vertical"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginStart="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:text="@string/reportbroadcast"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textColor="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textSize="@dimen/text_size_large"&ndash;&gt;-->
+<!--&lt;!&ndash;                        app:typeface="font_regular.otf" />&ndash;&gt;-->
+<!--&lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
+<!--&lt;!&ndash;            </RelativeLayout>&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <RelativeLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/viewerslist"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_alignParentBottom="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:visibility="gone">&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;                <com.hitasoft.app.external.CustomTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/numberviews"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginStart="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginTop="30dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:text="title"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:textColor="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:textSize="@dimen/text_size_large"&ndash;&gt;-->
+<!--&lt;!&ndash;                    app:typeface="font_bold.otf" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <com.hitasoft.app.external.CustomTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/text1"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_below="@+id/numberviews"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginStart="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:text="@string/totalviewers"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:textColor="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:textSize="@dimen/text_size_medium"&ndash;&gt;-->
+<!--&lt;!&ndash;                    app:typeface="font_regular.otf" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <View&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="1dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_below="@id/text1"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginTop="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:background="@color/viewcolor" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <com.hitasoft.app.external.CustomTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/viewerstitle"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_below="@id/text1"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginStart="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginTop="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:text="@string/liveviewers"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:textAllCaps="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:textColor="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:textSize="@dimen/text_size_small"&ndash;&gt;-->
+<!--&lt;!&ndash;                    app:typeface="font_regular.otf" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <androidx.recyclerview.widget.RecyclerView&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/viewlist"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_below="@+id/viewerstitle"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginStart="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginTop="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:scrollbars="none"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginLeft="10dp" />&ndash;&gt;-->
+<!--&lt;!&ndash;            </RelativeLayout>&ndash;&gt;-->
+<!--            </LinearLayout>-->
+
+<!--        </RelativeLayout>-->
+
+<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
+
+</FrameLayout>

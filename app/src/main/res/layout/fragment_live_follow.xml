@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragment.LiveFollowFragment">
+
+    <TextView
+        android:id="@+id/tvFriend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/frnd"
+        android:paddingTop="@dimen/_5dp"
+        android:paddingBottom="@dimen/_5dp"
+        android:paddingStart="@dimen/_10dp"
+        android:paddingEnd="@dimen/_10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/tvFriend"
+        android:background="@color/devider_color"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/follow_homepage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/v1"/>
+
+    <TextView
+        android:id="@+id/tvrecomen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/recomended"
+        android:paddingTop="@dimen/_5dp"
+        android:paddingBottom="@dimen/_5dp"
+        android:paddingStart="@dimen/_10dp"
+        android:paddingEnd="@dimen/_10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/follow_homepage"/>
+
+        <View
+            android:id="@+id/v2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/tvrecomen"
+            android:background="@color/devider_color"/>
+
+    <com.deificindia.indifun1.ui.swipe.SwipeRefreshLayout
+        android:layout_below="@+id/v2"
+        android:id="@+id/swipe_follow_homepage_recommended"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_follow_homepage_recommended"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.deificindia.indifun1.ui.swipe.SwipeRefreshLayout>
+
+    <com.deificindia.indifun1.ui.LoadingAnimView
+        android:id="@+id/loadinganim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v2"/>
+
+<!--        </LinearLayout>-->
+
+    <!--</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+
+</RelativeLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_scalable_gray_bg">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgAvtar"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:src="@drawable/img_user_default"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:text="usernam"
+        android:maxLines="1"
+        android:maxWidth="100dp"
+        android:ellipsize="end"
+        android:textColor="@color/white"
+        android:layout_toEndOf="@+id/imgAvtar"
+        android:layout_toStartOf="@+id/adduser"
+        />
+
+    <View
+        android:id="@+id/devider"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_1dp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/_2dp"
+        android:layout_marginBottom="@dimen/_2dp"
+        android:layout_marginEnd="@dimen/_5dp"
+        android:layout_marginStart="@dimen/_5dp"
+        android:layout_toEndOf="@+id/imgAvtar"
+        android:layout_toStartOf="@+id/adduser"
+        android:layout_below="@+id/tvName"/>
+
+    <RelativeLayout
+        android:id="@+id/bottomLay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/imgAvtar"
+        android:layout_marginStart="6dp"
+        android:layout_below="@+id/devider">
+
+        <ImageView
+            android:id="@+id/imgView"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/views"
+            />
+
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imgView"
+            android:gravity="center"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:text="234"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/adduser"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/add"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"/>
+
+
+</RelativeLayout>
